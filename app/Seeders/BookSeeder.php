@@ -13,11 +13,11 @@ final class BookSeeder implements DatabaseSeeder
 {
     public function run(null|string|UnitEnum $database): void
     {
-        for ($i = 0; $i < 100; ++$i) {
+        for ($i = 0; $i < 10; ++$i) {
             query(Book::class)
                 ->insert(
                     title: 'Timeline Taxi ' . $i,
-                    created_at: DateTime::now()->format('Y-m-d H:i:s'),
+                    created_at: DateTime::now(),
                 )
                 ->onDatabase($database)
                 ->execute();

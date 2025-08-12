@@ -3,16 +3,19 @@
         <input class="form-control" type="search"
                name="search" placeholder="Begin Typing To Search Users..."
                hx-get="{{ $href }}"
-               hx-trigger="input changed delay:500ms, keyup[key=='Enter'], load, {{ $trigger }}"
+               hx-trigger="input changed delay:500ms, keyup[key=='Enter'], {{ $trigger }}"
                hx-target="#search-results"
+               hx-select="#search-results"
+               hx-swap="outerHTML"
                hx-indicator=".htmx-indicator"
         />
         <div class="flex gap-2">
             <x-slot name="actions" />
         </div>
     </div>
-
+    <div class="htmx-indicator">Updating...</div>
     <div class="border rounded-md">
+
         <x-table>
             <x-table-header>
                 <x-table-row>
@@ -22,6 +25,7 @@
                 </x-table-row>
             </x-table-header>
             <x-table-body id="search-results">
+                <x-slot name="results" />
             </x-table-body>
         </x-table>
     </div>

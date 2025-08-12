@@ -3,7 +3,8 @@
     <div class="w-full">
         <div class="font-bold text-black text-lg border-b p-4">
             <div class="float-right cursor-pointer text-gray-400 hover:text-gray-600 transition"
-                 onclick="window.{{ $id }}.close()">
+                 onclick="window.{{ $id }}.close()"
+            >
                 <svg xmlns="http://www.w3.org/2000/svg"
                      fill="none"
                      viewBox="0 0 24 24"

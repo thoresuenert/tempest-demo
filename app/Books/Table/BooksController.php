@@ -18,6 +18,6 @@ final readonly class BooksController
         $books = Book::select()
             ->when($request->get('search'), fn ($query) => $query->where('title LIKE ?','%'.$request->get('search').'%' ))
             ->all();
-        return view('./table.view.php', books: $books);
+        return view('table.view.php', books: $books);
     }
 }
